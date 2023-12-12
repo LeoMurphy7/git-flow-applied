@@ -15,7 +15,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          This is the sidebar branch
+          <span>This is side bar</span>
         </a>
       </header>
     </div>
