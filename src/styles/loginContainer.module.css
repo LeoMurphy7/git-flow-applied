@@ -1,0 +1,6 @@
+.loginContainer {
+  background-color: green;
+  display: flex;
+  align-items: center;
+  height: 100vh;
+}
