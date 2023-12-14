@@ -11,6 +11,7 @@ function App() {
       <Route path="/sidebar" element={<Sidebar/>}></Route>
       <Route path="/homepage" element={<HomePage/>}></Route>
      </Routes>  
+
   );
 }
 
