@@ -6,11 +6,9 @@ import HomePage from "./pages/home/home"
 
 function App() {
   return (
-     <Routes>
-      <Route path="/login" element={<Login/>}></Route>
-      <Route path="/sidebar" element={<Sidebar/>}></Route>
-      <Route path="/home" element={<HomePage/>}></Route>
-     </Routes>  
+     <div>
+      <h1>This is development branch</h1>
+     </div>
   );
 }
 
