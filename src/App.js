@@ -5,11 +5,10 @@ import Login from "./pages/login/login";
 
 function App() {
   return (
-     <div>
-      <h1>
-        Making Conflict
-      </h1>
-     </div>
+     <Routes>
+      <Route path="/login" element={<Login/>}></Route>
+      <Route path="/sidebar" element={<Sidebar/>}></Route>
+     </Routes>
      
   );
 }
