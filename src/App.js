@@ -6,8 +6,7 @@ import Login from "./pages/login/login";
 function App() {
   return (
      <Routes>
-      <Route path="/login" element={<Login/>}></Route>
-      <Route path="/sidebar" element={<Sidebar/>}></Route>
+      <Route path="/" element={<Login/>}></Route>
       <Route path="/sidebar" element={<Sidebar/>}></Route>
      </Routes>
      
