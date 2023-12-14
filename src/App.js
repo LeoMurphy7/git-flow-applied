@@ -1,17 +1,16 @@
-import logo from "./logo.svg";
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
-import Home from "./components/home";
-import HomePage from "./pages/Home/home";
-import Sidebar from "./pages/Sidebar/sidebar";
+import Sidebar from "./pages/sidebar/sidebar";
+import Login from "./pages/login/login";
 
 function App() {
   return (
      <Routes>
-      <Route path="/" element={<HomePage/>}></Route>
+      <Route path="/login" element={<Login/>}></Route>
       <Route path="/sidebar" element={<Sidebar/>}></Route>
      </Routes>
   );
 }
 
 export default App;
+ 
