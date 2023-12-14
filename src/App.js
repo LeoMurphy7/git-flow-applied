@@ -10,8 +10,7 @@ function App() {
       <Route path="/login" element={<Login/>}></Route>
       <Route path="/sidebar" element={<Sidebar/>}></Route>
       <Route path="/home" element={<HomePage/>}></Route>
-     </Routes>
-     
+     </Routes>  
   );
 }
 
