@@ -7,7 +7,7 @@ import Profile from "./pages/profile/profile";
 import { AuthProvider } from "./utils/auth";
 import PrivateRoute from "./utils/requireAuth";
 import NavBar from "./components/navbar";
-import { LoginRoute } from "./routes/routeconstant";
+import { LoginRoute } from "./routes";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 

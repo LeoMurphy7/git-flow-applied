@@ -1,7 +1,7 @@
 import React from "react";
 import { useAuth } from "./auth";
 import { Navigate, useLocation } from "react-router";
-import { LoginRoute } from "../routes/routeconstant";
+import { LoginRoute } from "../routes";
 
 const PrivateRoute = ({ children }) => {
   const auth = useAuth();
