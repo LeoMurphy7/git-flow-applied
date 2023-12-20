@@ -9,8 +9,6 @@ import PrivateRoute from "./utils/requireAuth";
 import NavBar from "./components/navbar";
 import { LoginRoute } from "./routes";
 import "bootstrap/dist/css/bootstrap.min.css";
-
-import HomePage from "./pages/home/home";
 import ReduxTest from "./components/reduxtest";
 import { Provider } from "react-redux";
 import { persistor, store } from "./redux/store";

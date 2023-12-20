@@ -1,7 +1,7 @@
 import React from "react";
 import { useAuth } from "../../utils/auth";
 import { useNavigate } from "react-router";
-import { LoginRoute } from "../../routes/routeconstant";
+import { LoginRoute } from "../../routes";
 
 const Profile = () => {
   const navigate = useNavigate();
