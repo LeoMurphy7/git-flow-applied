@@ -1,25 +1,26 @@
-import React from 'react'
-import { useAuth } from '../../utils/auth'
-import { useNavigate } from 'react-router';
+import React from "react";
+import { useAuth } from "../../utils/auth";
+import { useNavigate } from "react-router";
+import { LoginRoute } from "../../routes/routeconstant";
 
 const Profile = () => {
   const navigate = useNavigate();
   const auth = useAuth();
-  console.log('checking',auth.user)
 
   const handleLogout = () => {
     auth.logout();
-    navigate('/login')
-    
-  }
+    navigate(LoginRoute);
+  };
 
   return (
-    <div style={{width:"400px", height:"200px" , margin:"0 auto"}}>
+    <div className="mx-auto w-25 h-25">
       <h1>Wellcome {auth.user}</h1>
 
-      <button className='btn btn-warning' onClick={handleLogout}>Logout</button>
+      <button className="btn btn-warning" onClick={handleLogout}>
+        Logout
+      </button>
     </div>
-  )
-}
+  );
+};
 
-export default Profile
+export default Profile;

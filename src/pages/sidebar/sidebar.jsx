@@ -7,7 +7,6 @@ function Sidebar() {
     const name = event.target.name;
     const value = event.target.value;
     setInputs((values) => ({ ...values, [name]: value }));
-    console.log("checking",inputs )
   };
   const handleSubmit = (event) => {
     event.preventDefault();

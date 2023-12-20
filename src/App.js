@@ -5,18 +5,21 @@ import Login from "./pages/login/login";
 import HomePage from "./pages/home/home";
 import Profile from "./pages/profile/profile";
 import { AuthProvider } from "./utils/auth";
-import RequireAuth from "./utils/requireAuth";
+import PrivateRoute from "./utils/requireAuth";
 import NavBar from "./components/navbar";
+import { LoginRoute } from "./routes/routeconstant";
+import "bootstrap/dist/css/bootstrap.min.css";
+
 
 function App() {
   return (
     <AuthProvider>
       <NavBar/>
       <Routes>
-        <Route path="/login" element={<Login />}></Route>
+        <Route path={LoginRoute} element={<Login />}></Route>
         <Route path="/sidebar" element={<Sidebar />}></Route>
         <Route path="/homepage" element={<HomePage name={"Mustang"} />}></Route>
-          <Route path="/profile" element={<RequireAuth><Profile /></RequireAuth>}></Route>
+          <Route path="/profile" element={<PrivateRoute><Profile /></PrivateRoute>}></Route>
       </Routes>
     </AuthProvider>
   );

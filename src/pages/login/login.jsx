@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useAuth } from "../../utils/auth";
 import { useLocation, useNavigate } from "react-router";
-import "bootstrap/dist/css/bootstrap.min.css";
 
 export default function Login() {
   const [user, setUser] = useState("");
@@ -20,14 +19,14 @@ export default function Login() {
   };
 
   return (
-    <div className="card" style={{ width: "30rem" ,margin:" auto"}}>
+    <div className="card w-25 mx-auto" >
       <div className="card-body">
         <h5 className="card-title">Login</h5>
-        <div style={{display:'flex',flexDirection:'row',marginBottom:"5px",alignItems:"center"}}>
+        <div className="mb-2 d-flex align-items-center">
           <label htmlFor="inpt" className="card-text">
             Username: 
           </label>
-          <input type="text"  className="form-control" onChange={handleChange}/>
+          <input type="text" id="inpt"  className="form-control" onChange={handleChange}/>
         </div>
         <button className="btn btn-primary" onClick={handleLogin}>Login</button>
       </div>
