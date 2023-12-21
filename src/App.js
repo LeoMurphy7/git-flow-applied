@@ -7,7 +7,14 @@ import Profile from "./pages/profile/profile";
 import { AuthProvider } from "./utils/auth";
 import PrivateRoute from "./utils/requireAuth";
 import NavBar from "./components/navbar";
-import { LoginRoute } from "./routes";
+import {
+  LoginRoute,
+  SideBarRoute,
+  HomePageRoute,
+  ProfileRoute,
+  ReduxTestRoute,
+  ReduxPersistRoute,
+} from "./routes";
 import "bootstrap/dist/css/bootstrap.min.css";
 import ReduxTest from "./components/reduxtest";
 import { Provider } from "react-redux";
@@ -23,21 +30,21 @@ function App() {
           <NavBar />
           <Routes>
             <Route path={LoginRoute} element={<Login />}></Route>
-            <Route path="/sidebar" element={<Sidebar />}></Route>
+            <Route path={SideBarRoute} element={<Sidebar />}></Route>
             <Route
-              path="/homepage"
+              path={HomePageRoute}
               element={<HomePage name={"Mustang"} />}
             ></Route>
             <Route
-              path="/profile"
+              path={ProfileRoute}
               element={
                 <PrivateRoute>
                   <Profile />
                 </PrivateRoute>
               }
             ></Route>
-            <Route path="/redux" element={<ReduxTest />}></Route>
-            <Route path="/reduxpersist" element={<ReduxPersist/>}></Route>
+            <Route path={ReduxTestRoute} element={<ReduxTest />}></Route>
+            <Route path={ReduxPersistRoute} element={<ReduxPersist />}></Route>
           </Routes>
         </PersistGate>
       </Provider>
