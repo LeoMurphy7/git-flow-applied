@@ -13,26 +13,36 @@ import ReduxTest from "./components/reduxtest";
 import { Provider } from "react-redux";
 import { persistor, store } from "./redux/store";
 import { PersistGate } from "redux-persist/integration/react";
+import ReduxPersist from "./components/reduxpersist";
 
 function App() {
   return (
     <AuthProvider>
       <Provider store={store}>
-    <PersistGate persistor={persistor}>
-      <NavBar/>
-      <Routes>
-        <Route path={LoginRoute} element={<Login />}></Route>
-        <Route path="/sidebar" element={<Sidebar />}></Route>
-        <Route path="/homepage" element={<HomePage name={"Mustang"} />}></Route>
-          <Route path="/profile" element={<PrivateRoute><Profile /></PrivateRoute>}></Route>
-          <Route path="/redux" element={<ReduxTest/>}></Route>
-      </Routes>
-      </PersistGate>
-    </Provider>
+        <PersistGate persistor={persistor}>
+          <NavBar />
+          <Routes>
+            <Route path={LoginRoute} element={<Login />}></Route>
+            <Route path="/sidebar" element={<Sidebar />}></Route>
+            <Route
+              path="/homepage"
+              element={<HomePage name={"Mustang"} />}
+            ></Route>
+            <Route
+              path="/profile"
+              element={
+                <PrivateRoute>
+                  <Profile />
+                </PrivateRoute>
+              }
+            ></Route>
+            <Route path="/redux" element={<ReduxTest />}></Route>
+            <Route path="/reduxpersist" element={<ReduxPersist/>}></Route>
+          </Routes>
+        </PersistGate>
+      </Provider>
     </AuthProvider>
-        
   );
 }
 
 export default App;
-
