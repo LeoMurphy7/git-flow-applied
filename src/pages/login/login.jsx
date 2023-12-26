@@ -27,6 +27,7 @@ export default function Login() {
   });
 
   const onSubmit = (values) => {
+    console.log("checking...",values)
     handleLogin(values.email);
   };
 
@@ -36,38 +37,46 @@ export default function Login() {
       initialValues={initialValues}
       validationSchema={validationSchema}
       onSubmit={onSubmit}
+      validateOnChange={false}
     >
-      <div className="card-body w-25 mx-auto">
-        <h5 className="card-title">Login</h5>
-        <Form>
+      {({values,errors,touched,handleChange,handleSubmit}) => (
+        <div className="card-body w-25 mx-auto">
+        <form onSubmit={handleSubmit}>
           <div className="mb-2 d-flex align-items-center">
             <label htmlFor="email" className="card-text">
               Username:
             </label>
-            <Field
+            <input
               type="text"
               id="email"
               name="email"
               className="form-control"
+              onChange={handleChange}
+              value={values.email}
+              
             />
-            <ErrorMessage name="email" />
+            {errors.email && touched.email && errors.email}
           </div>
 
           <div className="mb-2 d-flex align-items-center">
             <label htmlFor="password">Password: </label>
-            <Field
+            <input
               className="form-control"
               type="password"
               id="password"
               name="password"
+              onChange={handleChange}
+              value={values.password}
             />
-            <ErrorMessage name="password" />
+            {errors.password && errors.touched && errors.password}
           </div>
           <button className="btn btn-primary" type="submit">
             Login
           </button>
-        </Form>
+        </form>
       </div>
+      )}
+      
     </Formik>
   );
 }
