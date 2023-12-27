@@ -27,7 +27,7 @@ function App() {
     <AuthProvider>
       <Provider store={store}>
         <PersistGate persistor={persistor}>
-          <NavBar />
+          {/* <NavBar /> */}
           <Routes>
             <Route path={LoginRoute} element={<Login />}></Route>
             <Route path={SideBarRoute} element={<Sidebar />}></Route>

@@ -1,3 +1,4 @@
+export const RootRoute = '/';
 export const LoginRoute = '/login';
 export const SideBarRoute = '/sidebar';
 export const HomePageRoute = '/homepage';
