@@ -4,6 +4,7 @@ import { useAuth } from "../../utils/auth";
 import { useLocation, useNavigate } from "react-router";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
+import Styles from '../../styles/loginContainer.module.css';
 
 export default function Login() {
   const auth = useAuth();
@@ -27,56 +28,57 @@ export default function Login() {
   });
 
   const onSubmit = (values) => {
-    console.log("checking...",values)
+    console.log("checking...", values);
     handleLogin(values.email);
   };
 
   return (
-    <Formik
-      className="card w-25 mx-auto"
-      initialValues={initialValues}
-      validationSchema={validationSchema}
-      onSubmit={onSubmit}
-      validateOnChange={false}
-    >
-      {({values,errors,touched,handleChange,handleSubmit}) => (
-        <div className="card-body w-25 mx-auto">
-        <form onSubmit={handleSubmit}>
-          <div className="mb-2 d-flex align-items-center">
-            <label htmlFor="email" className="card-text">
-              Username:
-            </label>
-            <input
-              type="text"
-              id="email"
-              name="email"
-              className="form-control"
-              onChange={handleChange}
-              value={values.email}
-              
-            />
-            {errors.email && touched.email && errors.email}
-          </div>
+    <div className={Styles.loginContainer}>
+      <Formik
+        initialValues={initialValues}
+        validationSchema={validationSchema}
+        onSubmit={onSubmit}
+        validateOnChange={false}
+      >
+        {({ values, errors, touched, handleChange, handleSubmit }) => (
+          <div className={Styles.card}>
+            <form onSubmit={handleSubmit} className={Styles.cardForm}>
+              <div className="mb-2 d-flex align-items-center">
+                {/* <label htmlFor="email" >
+                  Username:
+                </label> */}
+                <input
+                  type="text"
+                  id="email"
+                  name="email"
+                  placeholder="USERNAME"
+                  className={Styles.input}
+                  onChange={handleChange}
+                  value={values.email}
+                />
+                {errors.email && touched.email && errors.email}
+              </div>
 
-          <div className="mb-2 d-flex align-items-center">
-            <label htmlFor="password">Password: </label>
-            <input
-              className="form-control"
-              type="password"
-              id="password"
-              name="password"
-              onChange={handleChange}
-              value={values.password}
-            />
-            {errors.password && errors.touched && errors.password}
+              <div className="mb-2 d-flex align-items-center">
+                {/* <label htmlFor="password">Password: </label> */}
+                <input
+                  className={Styles.input}
+                  type="password"
+                  id="password"
+                  name="password"
+                  placeholder="PASSWORD"
+                  onChange={handleChange}
+                  value={values.password}
+                />
+                {errors.password && errors.touched && errors.password}
+              </div>
+              <button className={Styles.loginBtn} type="submit">
+                Login
+              </button>
+            </form>
           </div>
-          <button className="btn btn-primary" type="submit">
-            Login
-          </button>
-        </form>
-      </div>
-      )}
-      
-    </Formik>
+        )}
+      </Formik>
+    </div>
   );
 }
