@@ -1,4 +1,5 @@
 import React from "react";
+import { HookFormZodRoute } from "../routes";
 
 const NavBar = () => {
   return (
@@ -21,8 +22,8 @@ const NavBar = () => {
             </a>
           </li>
           <li className="nav-item">
-            <a className="nav-link " href="#">
-              Disabled
+            <a className="nav-link " href={HookFormZodRoute}>
+              hookform
             </a>
           </li>
         </ul>
