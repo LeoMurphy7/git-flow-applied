@@ -21,8 +21,8 @@ const NavBar = () => {
             </a>
           </li>
           <li className="nav-item">
-            <a className="nav-link " href="#">
-              Disabled
+            <a className="nav-link " href="/todo">
+              todo list
             </a>
           </li>
         </ul>

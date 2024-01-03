@@ -14,6 +14,7 @@ import {
   ProfileRoute,
   ReduxTestRoute,
   ReduxPersistRoute,
+  TodoListRoute,
 } from "./routes";
 import "bootstrap/dist/css/bootstrap.min.css";
 import ReduxTest from "./components/reduxtest";
@@ -21,6 +22,7 @@ import { Provider } from "react-redux";
 import { persistor, store } from "./redux/store";
 import { PersistGate } from "redux-persist/integration/react";
 import ReduxPersist from "./components/reduxpersist";
+import Todo from "./pages/todolist/todo";
 
 function App() {
   return (
@@ -45,6 +47,7 @@ function App() {
             ></Route>
             <Route path={ReduxTestRoute} element={<ReduxTest />}></Route>
             <Route path={ReduxPersistRoute} element={<ReduxPersist />}></Route>
+            <Route path={TodoListRoute} element={<Todo/>}></Route>
           </Routes>
         </PersistGate>
       </Provider>

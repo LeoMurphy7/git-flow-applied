@@ -5,3 +5,4 @@ export const HomePageRoute = '/homepage';
 export const ProfileRoute = '/profile';
 export const ReduxTestRoute = '/redux';
 export const ReduxPersistRoute = '/reduxpersist';
+export const TodoListRoute = '/todo'
