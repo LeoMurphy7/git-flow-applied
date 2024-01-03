@@ -57,14 +57,18 @@ function Form() {
   //   setInputFields(data);
   // };
 
-  const handleRemoveField = (index) => {
+  const handleRemoveOuterField = (index) => {
     const values = [...inputFields];
-    setInputFields(values);
     values.splice(index, 1);
+    setInputFields(values);
   };
-  const handleRemoveInnerField = () => {
-    console.log('remove inner filed is working well')
-  }
+  const handleRemoveInnerField = (index, outerIndex) => {
+    console.log("remove inner filed is working well", index, outerIndex);
+    const nextState = produce(inputFields, (draftState) => {
+      draftState[outerIndex].extra.splice(index, 1);
+    });
+    setInputFields(nextState);
+  };
 
   const handleUpdateField = (index) => {
     console.log("update button is working...", index);
@@ -80,7 +84,6 @@ function Form() {
         Add more...
       </button>
       <form onSubmit={handleSubmit}>
-
         {inputFields.map((outerField, outerIndex) => (
           <div
             key={outerIndex + "outerField"}
@@ -88,7 +91,7 @@ function Form() {
               border: "1px solid black",
               padding: "10px",
               marginBottom: "10px",
-              width: "520px",
+              width: "600px",
             }}
           >
             <div key={outerIndex} className="card-body d-flex mb-2">
@@ -140,9 +143,23 @@ function Form() {
                       handleInnerInputChange(event, index, outerIndex);
                     }}
                   />
+                  <button
+                    className="btn btn-sm btn-warning ms-2"
+                    onClick={() => {
+                      handleRemoveInnerField(index, outerIndex);
+                    }}
+                  >
+                    remove
+                  </button>
                 </div>
               );
             })}
+            <button
+              className="btn btn-danger"
+              onClick={() => handleRemoveOuterField(outerIndex)}
+            >
+              Delete
+            </button>
           </div>
         ))}
       </form>
